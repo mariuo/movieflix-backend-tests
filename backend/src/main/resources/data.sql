@@ -23,9 +23,6 @@ INSERT INTO tb_movie (title, sub_title, year, img_url, synopsis, genre_id) VALUE
 INSERT INTO tb_movie (title, sub_title, year, img_url, synopsis, genre_id) VALUES ('A Conquista dos Ares ','Eita danousse','1901','https://www.themoviedb.org/t/p/w533_and_h300_bestv2/kJSnhBQZyCcbqxMZJuDby8ULcfS.jpg','Um homem cruza os céus em sua geringonça voadora.','2');
 INSERT INTO tb_movie (title, sub_title, year, img_url, synopsis, genre_id) VALUES ('Godzilla vs. Kong','Um dos dois cairá.','2020','https://www.themoviedb.org/t/p/w533_and_h300_bestv2/iopYFB1b6Bh7FWZh3onQhph1sih.jpg','Em uma época em que os monstros andam na Terra, a luta da humanidade por seu futuro coloca Godzilla e Kong em rota de colisão que verá as duas forças mais poderosas da natureza no planeta se confrontarem em uma batalha espetacular para as idades. Enquanto Monarch embarca em uma missão perigosa em terreno desconhecido e descobre pistas sobre as origens dos Titãs, uma conspiração humana ameaça tirar as criaturas, boas e más, da face da terra para sempre.','3');
 
-
-
-
 INSERT INTO tb_review(text,movie_id,user_id) VALUES('Um clássico, excelente filme!', 1,2);
 INSERT INTO tb_review(text,movie_id,user_id) VALUES('Filme muito antigo, so para quem gosta!', 7,2);
 INSERT INTO tb_review(text,movie_id,user_id) VALUES('Filme para ver com família.', 5,2);
