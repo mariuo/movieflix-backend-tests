@@ -1,8 +1,9 @@
 package com.devsuperior.movieflix.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,10 +18,11 @@ public class GenreService {
 	private GenreRepository repository;
 	
 	@Transactional(readOnly = true)
-	public Page<GenreDTO> findAllPaged(PageRequest pageRequest) {
-		Page<Genre> list = repository.findAll(pageRequest);	
-		return list.map(x -> new GenreDTO(x));
+	public List<GenreDTO> findAll() {
+		List<Genre> list = repository.findOrderByNameAsc();
+		return list.stream().map(x-> new GenreDTO(x)).collect(Collectors.toList());
 	}
+	
 	
 
 	
