@@ -25,7 +25,7 @@ public class MovieService {
 	@Autowired
 	private GenreRepository genreRepository;
 	
-	@PreAuthorize("hasAnyRole('MEMBER','VISITOR')")
+	
 	@Transactional(readOnly = true)
 	public MovieDTO findById(Long id) {
 		Optional<Movie> obj = repository.findById(id);
@@ -33,7 +33,7 @@ public class MovieService {
 		return new MovieDTO(entity, entity.getReviews());
 		
 	}
-	@PreAuthorize("hasAnyRole('MEMBER','VISITOR')")
+	
 	@Transactional(readOnly = true)
 	public Page<MovieDTO> findAllPaged(Long genreId, PageRequest pageRequest) {
 		Genre genre = (genreId == 0) ? null : genreRepository.getOne(genreId);

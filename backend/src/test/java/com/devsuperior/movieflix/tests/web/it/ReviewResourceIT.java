@@ -112,7 +112,7 @@ public class ReviewResourceIT {
 						.accept(MediaType.APPLICATION_JSON));
 		
 		result.andExpect(status().isCreated());
-		result.andExpect(jsonPath("$.user").exists());
+		result.andExpect(jsonPath("$.user").exists()); //ReviewDTO -> UserDTO user
 		result.andExpect(jsonPath("$.user.id").exists());
 		result.andExpect(jsonPath("$.user.name").exists());
 		result.andExpect(jsonPath("$.user.email").value(memberUsername));
