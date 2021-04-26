@@ -1,9 +1,11 @@
 import React from 'react';
 import './app.scss';
+import Navbar from './core/components/Navbar';
 
 const App = () =>{
     return(
-      <h1>MovieFlix</h1>  )
+      <Navbar />
+      )
   }
 
 export default App;
