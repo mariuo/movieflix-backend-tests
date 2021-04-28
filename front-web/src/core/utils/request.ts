@@ -1,6 +1,7 @@
 import axios, {Method} from 'axios';
 import { CLIENT_ID, CLIENT_SECRET } from './auth';
 import qs from 'qs';
+import { logout } from './auth';
 
 type RequestParams = {
     method?: Method;
@@ -15,6 +16,15 @@ type LoginData = {
     password: string;
 }
 const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080';
+
+axios.interceptors.response.use(function (response) {
+    return response;
+  }, function (error) {
+      if (error.response.status === 401){
+          logout();
+      }
+    return Promise.reject(error);
+});
 
 export const makeRequest = ({method = 'GET', url, data, params, headers} : RequestParams) => {
     return axios({

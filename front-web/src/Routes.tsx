@@ -1,10 +1,11 @@
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { Router, Switch, Route} from 'react-router-dom';
 import Navbar from './core/components/Navbar';
 import Catalog from './core/pages/Catalog';
 import Home from './core/pages/Home';
+import history from './core/utils/history';
 
 const Routes = () => (
-    <BrowserRouter>
+    <Router history={history}>
         <Navbar />
         <Switch>
             <Route path="/" exact>
@@ -14,6 +15,6 @@ const Routes = () => (
                 <Catalog />
             </Route>
         </Switch>
-    </BrowserRouter>
+    </Router>
 );
 export default Routes;
