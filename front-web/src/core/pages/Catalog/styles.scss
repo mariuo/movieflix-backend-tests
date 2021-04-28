@@ -1,0 +1,15 @@
+.catalog-container{
+    margin: 25px 135px;
+}
+.filter-bar {
+    display: flex;
+    align-items: center;    
+    padding: 17px;
+ }
+.catalog-movies {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    justify-content: space-between;
+    grid-gap: 31px 31px;
+}

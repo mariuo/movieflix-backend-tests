@@ -1,0 +1,37 @@
+.product-card{
+    //width: 270px;
+    //height: 322px;
+    padding-bottom: 55px;
+    padding-top: 25px;
+    text-align: center;
+}
+.movie-info{
+    margin-top: 15px;
+    text-align: left;
+    margin-left: 15px;
+    
+}
+.movie-name{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}
+.movie-age{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    color: #FFC700;
+}
+.movie-description{  
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}
+.movie-card-img{
+    width: 100%;
+}

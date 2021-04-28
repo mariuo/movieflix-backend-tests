@@ -1,5 +1,5 @@
-import axios, {Method} from 'axios';
-import { CLIENT_ID, CLIENT_SECRET, logout } from './auth';
+import axios, {AxiosRequestConfig, Method} from 'axios';
+import { CLIENT_ID, CLIENT_SECRET, getSessionData, logout } from './auth';
 import qs from 'qs';
 
 
@@ -35,6 +35,14 @@ export const makeRequest = ({method = 'GET', url, data, params, headers} : Reque
         headers
     });
 };
+export const makePrivateRequest = (params : AxiosRequestConfig) => {
+    const sessionData = getSessionData();
+
+    const headers = {
+        'Authorization': `Bearer ${sessionData.access_token}`
+    }
+    return makeRequest({ ...params, headers})
+}
 export const makeLogin = (LoginData: LoginData) => {
     const token = `${CLIENT_ID}:${CLIENT_SECRET}`;
 
