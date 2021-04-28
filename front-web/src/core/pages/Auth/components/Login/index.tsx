@@ -6,24 +6,30 @@ import { useForm } from "react-hook-form";
 import { makeLogin } from 'core/utils/request';
 import { useState } from 'react';
 import { saveSessionData } from 'core/utils/auth';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 
 type FormData = {
     username: string;
     password: string;
 }
 
+type LocationState = {
+    from: string;
+}
+
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
     const [hasError, setHasError] = useState(false);
     const history = useHistory();
+    let location = useLocation<LocationState>();
 
+    const { from } = location.state || { from: {pathname: "/catalog"}}
     const onSubmit = (data: FormData) => {
         makeLogin(data)
             .then(response => {
                 setHasError(false);
                 saveSessionData(response.data);
-                history.push('/catalog')
+                history.replace(from);
             })
             .catch(() => {
                 setHasError(true);

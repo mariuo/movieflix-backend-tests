@@ -1,7 +1,7 @@
 import axios, {Method} from 'axios';
-import { CLIENT_ID, CLIENT_SECRET } from './auth';
+import { CLIENT_ID, CLIENT_SECRET, logout } from './auth';
 import qs from 'qs';
-import { logout } from './auth';
+
 
 type RequestParams = {
     method?: Method;
