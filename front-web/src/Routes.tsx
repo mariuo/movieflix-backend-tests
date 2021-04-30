@@ -1,4 +1,5 @@
 import PrivateRoute from 'core/components/Routes/PrivateRoute';
+import Details from 'core/pages/Catalog/Details';
 import { Router, Switch, Route} from 'react-router-dom';
 import Navbar from './core/components/Navbar';
 import Catalog from './core/pages/Catalog';
@@ -12,9 +13,13 @@ const Routes = () => (
             <Route path="/" exact>
                 <Home />
             </Route>
-            <PrivateRoute path="/catalog">
+            <Route path="/movies/:movieId">
+                <Details />
+            </Route>
+            <PrivateRoute path="/movies">
                 <Catalog />
             </PrivateRoute>
+            
         </Switch>
     </Router>
 );
