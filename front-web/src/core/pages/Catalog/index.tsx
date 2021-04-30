@@ -1,8 +1,9 @@
 import MovieCard from "core/components/MovieCard";
+import MovieFilters from "core/components/MovieFilters";
 import Pagination from "core/components/Pagination";
-import { MoviesResponse } from "core/types/movie";
+import { Genre, MoviesResponse } from "core/types/movie";
 import { makePrivateRequest } from "core/utils/request";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './styles.scss';
 
@@ -10,19 +11,30 @@ const Catalog = () => {
 
     const [moviesResponse, setMoviesResponse] = useState<MoviesResponse>();
     const [activePage, setActivePage] = useState(0);
-    console.log(moviesResponse);
+    const [genre, setGenre] = useState<Genre>();
 
-    useEffect (()=>{
+    const handleChangeGenre = ( genre: Genre) => {
+        setActivePage(0);
+        setGenre(genre);
+    }
+    
+    const getMovies = useCallback (() => {
         const params = {
             page: activePage,
-            linesPerPage:10
+            linesPerPage:10,
+            genreId: genre?.id
         }
         makePrivateRequest ({url:'/movies', params})
         .then(response => setMoviesResponse(response.data));
-    },[activePage]);
+    }, [activePage, genre]);
+
+    useEffect (()=>{
+        getMovies();
+    },[getMovies]);
 
     return (
-        <div className="catalog-container">            
+        <div className="catalog-container">
+            <MovieFilters genre={genre} handleChangeGenre={handleChangeGenre} />            
             <div className="catalog-movies">
                 {moviesResponse?.content.map(movie => (
                     <Link to={`/movies/${movie.id}`} key={movie.id}>

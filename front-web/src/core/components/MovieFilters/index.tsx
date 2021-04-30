@@ -6,28 +6,26 @@ import './styles.scss';
 
 type Props = {
     genre?: Genre;
-    handleChangeGenre: (genre: Genre) => void
-    
+    handleChangeGenre: (genre: Genre) => void    
 }
-const MovieFilters = ({handleChangeGenre, genre} : Props ) => {
+
+
+const MovieFilters = ({genre, handleChangeGenre} : Props ) => {
     const [isLoadingGenre, setIsLoadingGenre] = useState(false);
     const [genres, setGenres] = useState<Genre[]>([]);
-
-    const handleChangeGenre = (genre: Genre) => {
-          setActivePage(0);
-        setGenres(genres);        
-    }    
-    useEffect(()=>{
+    
+    
+    useEffect(()=>{        
         setIsLoadingGenre(true);
         makePrivateRequest({url: '/genres'})
-        .then(response => setGenres(response.data.content))
+        .then(response => setGenres(response.data))        
         .finally(()=> setIsLoadingGenre(false));
     },[]);
 
     return (
         <div className="card-base border-radius-10 movie-filter-container">
             <Select 
-                name="categories"
+                name="genres"
                 key={`select-${genre?.id}`}
                 value={genre}
                 isLoading={isLoadingGenre}
@@ -35,13 +33,12 @@ const MovieFilters = ({handleChangeGenre, genre} : Props ) => {
                 getOptionLabel={(option: Genre) => option.name}
                 getOptionValue={(option: Genre) => String(option.id)}
                 className="filter-select-container"
-                classNamePrefix="product-categories-select"
-                placeholder="Genre"
+                classNamePrefix="movie-genres-select"
+                placeholder="Generos"
                 onChange={value => handleChangeGenre(value as Genre)}
                 isClearable
             />
        </div> 
-    )
-}
-
+    );
+};
 export default MovieFilters;

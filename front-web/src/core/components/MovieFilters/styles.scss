@@ -3,3 +3,80 @@
     align-items: center;    
     padding: 17px;     
 }
+.filter-select-container{
+    //display: inline;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 256px;
+    max-width: 256px;
+    margin-left: 20px;    
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;    
+    border-radius: 10px;
+    background   : #6C6C6C;
+    box-shadow   : 0px 4px 20px rgba(0, 0, 0, 0.25); 
+
+    .css-1pahdxg-control{
+        border-color: #FFC700;
+        box-shadow: #FFC700;
+    }
+    .movie-genres-select__control{
+        height:50px;
+        border: none;       
+        border-color: #FFFFFF;
+        border: 1px solid #E1E1E1;
+        //box-sizing: border-box;
+        border-radius: 10px !important;         
+    }
+    .movie-genres-select__indicators-separator{
+        display: none;
+    }
+    .movie-genres-select__placeholder{
+        color: #fff;
+    }
+    .css-yk16xz-control{
+        background-color: #6C6C6C;
+    }
+    .movie-genres-select__value-container{
+        color: #fff;
+    }
+    .movie-genres-select__control{
+        background: #6C6C6C;
+        
+    }
+    .css-tj5bde-Svg {
+        width: 30px;
+        height: 25px ;
+    }
+    .movie-genres-select__single-value{
+        color: #fff;
+    }
+    .movie-genres-select__menu{
+        background-color: #6C6C6C;
+    }
+    .css-2613qy-menu{
+
+    }
+    
+    
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
