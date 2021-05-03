@@ -13,10 +13,10 @@ const Routes = () => (
             <Route path="/" exact>
                 <Home />
             </Route>
-            <Route path="/movies/:movieId">
+            <PrivateRoute path="/movies/:movieId" allowedRoutes={['ROLE_MEMBER','ROLE_VISITOR']}>
                 <Details />
-            </Route>
-            <PrivateRoute path="/movies">
+            </PrivateRoute>
+            <PrivateRoute path="/movies" allowedRoutes={['ROLE_MEMBER','ROLE_VISITOR']}>
                 <Catalog />
             </PrivateRoute>
             
