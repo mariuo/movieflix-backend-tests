@@ -2,6 +2,7 @@ export type MoviesResponse = {
     content: Movie[];
     totalPages: number;
 }
+
 export type Movie = {
     id: number;
     title: string;
@@ -14,11 +15,24 @@ export type Movie = {
 }
 
 export type Review = {
-    movieId: number;
+    id: number;
     text: string;
+    movieId: number;
+    user: User;
 }
 
 export type Genre = {
     id: number;
     name: string;
+}
+
+export type User = {
+    id: number;
+    name: string;
+    email: string;
+    roles: Role[];
+}
+export type Role = {
+    id: number;
+    authority: string;
 }

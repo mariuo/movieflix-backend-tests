@@ -1,6 +1,7 @@
 package com.devsuperior.movieflix.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,6 +24,7 @@ public class ReviewService {
 	@Autowired
 	private AuthService authService;
 	
+	@PreAuthorize("hasAnyRole('MEMBER')")
 	@Transactional
 	public ReviewDTO insert(ReviewDTO dto) {
 		Movie movie = movieRepository.getOne(dto.getMovieId());

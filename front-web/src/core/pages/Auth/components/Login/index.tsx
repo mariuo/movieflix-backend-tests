@@ -24,6 +24,7 @@ const Login = () => {
     let location = useLocation<LocationState>();
 
     const { from } = location.state || { from: {pathname: "/movies"}}
+    
     const onSubmit = (data: FormData) => {
         makeLogin(data)
             .then(response => {

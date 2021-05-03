@@ -5,6 +5,7 @@ import './styles.scss';
 type Props = {
     movie: Movie;
 }
+
 const MovieCard = ({movie} : Props) => {
 
 

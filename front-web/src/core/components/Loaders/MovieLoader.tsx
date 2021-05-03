@@ -2,7 +2,7 @@ import ContentLoader from "react-content-loader";
 import { generateList } from "core/utils/list";;
 
 const MovieLoader = () => {
-    const loaderItems = generateList(1);
+    const loaderItems = generateList(5);
     return (
         <>
             {loaderItems.map(item => (
@@ -14,6 +14,7 @@ const MovieLoader = () => {
                     viewBox="0 0 250 335"
                     backgroundColor="#8e7a43"
                     foregroundColor="#525252"
+                    className="margin-right: 15px"
                 >
                     <rect x="0" y="0" rx="10" ry="10" width="250" height="335" />
                 </ContentLoader>
