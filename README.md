@@ -1,25 +1,25 @@
 # MovieFlix
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/mariuo/dscatalog-bootcamp-devsuperior/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/mariuo/movieflix/blob/main/LICENSE) 
 
 # About the project
 
-https://mario-movieflix.netlify.app
+https://mario-movieflix.netlify.app/
 
 MovieFlix is a full stack web and mobile(developping) application built during the full course by [DevSuperior](https://devsuperior.com "WebSite DevSuperior"). The application consists of a Catalog of Movies, Genres and Users with access levels.
 
 ## Layout web
-![Web 1](https://github.com/mariuo/assets/blob/main/dscatalog/web_01.png)
+![Web 1](https://github.com/mariuo/assets/blob/main/movieflix/web_01.png)
 
-![Web 2](https://github.com/mariuo/assets/blob/main/dscatalog/web_02.png)
+![Web 2](https://github.com/mariuo/assets/blob/main/movieflix/web_02.png)
 
-![Web 3](https://github.com/mariuo/assets/blob/main/dscatalog/web_04.png)
+![Web 3](https://github.com/mariuo/assets/blob/main/movieflix/web_03.png)
 
-![Web 4](https://github.com/mariuo/assets/blob/main/dscatalog/web_05.png)
+![Web 4](https://github.com/mariuo/assets/blob/main/movieflix/web_04.png)
 
 ## Layout mobile
 
 ## Model
-![Conceptual model](https://github.com/mariuo/assets/blob/main/dscatalog/modelo_conceitual.png)
+![Conceptual model](https://github.com/mariuo/assets/blob/main/movieflix/model.png)
 
 # Technologies
 ## MVC, Rest
