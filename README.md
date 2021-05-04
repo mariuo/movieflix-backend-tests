@@ -5,7 +5,7 @@
 
 https://mario-movieflix.netlify.app/
 
-MovieFlix is a full stack web and mobile(developping) application built during the full course by [DevSuperior](https://devsuperior.com "WebSite DevSuperior"). The application consists of a Catalog of Movies, Genres and Users with access levels.
+This project is a studies based on tests, following the TEST DRIVEN DEVELOPMENT(TDD): MovieFlix is a full stack web and mobile(developping) application built during the full course by [DevSuperior](https://devsuperior.com "WebSite DevSuperior"). The application consists of a Catalog of Movies, Genres and Users with access levels.
 
 ## Layout web
 ![Web 1](https://github.com/mariuo/assets/blob/main/movieflix/web_01.png)
