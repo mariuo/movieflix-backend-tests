@@ -40,8 +40,12 @@ const theme = StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center",
         backgroundColor: colors.darkGray,
+        width: "100%",
+        height: "100%",
+
     },
     content:{
+
         width: 220,
         alignItems: "center",
         justifyContent: "center",
@@ -66,10 +70,21 @@ const theme = StyleSheet.create({
         borderBottomRightRadius: 10,
         alignItems:"center",
         justifyContent: "center",
-    }
+    },
+});
 
+const nav = StyleSheet.create({
+    content:{
+        backgroundColor: colors.primary,
 
+    },
+    text:{
+        marginLeft: 30,
+        fontWeight:"bold",
+        color: colors.black,
+        fontSize: 18,
+    },
 });
 
 
-export {colors, theme, text };
+export {colors, theme, text, nav };
