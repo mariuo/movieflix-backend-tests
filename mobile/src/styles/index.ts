@@ -32,6 +32,15 @@ const text = StyleSheet.create({
         textTransform: "uppercase",
         marginLeft: 90,
     },
+    loginTitle:{
+        fontWeight:"400",
+        fontSize: 30,
+        textTransform: "uppercase",
+        color: colors.white,
+        marginTop: 100,
+        marginBottom: 50,
+    },
+
 });
 
 const theme = StyleSheet.create({
@@ -41,11 +50,9 @@ const theme = StyleSheet.create({
         alignItems: "center",
         backgroundColor: colors.darkGray,
         width: "100%",
-        height: "100%",
-
+        height: "100%", 
     },
     content:{
-
         width: 220,
         alignItems: "center",
         justifyContent: "center",
@@ -71,19 +78,60 @@ const theme = StyleSheet.create({
         alignItems:"center",
         justifyContent: "center",
     },
+
+    // LOGIN
+    form:{
+        marginVertical:10,
+    },
+    textInput:{
+        width:290,
+        height:50,
+        borderWidth: 1,
+        borderColor: colors.white,
+        backgroundColor: colors.white,
+        borderRadius: 10,
+        padding:10,
+    },
+    passwordContainer:{
+        flexDirection: "row",
+        alignItems: "center",
+        marginVertical:25,
+
+    },
+    toggle:{
+        marginLeft:-40,
+    },
+    eyes:{},
+    loginContainer:{
+        flex: 1,
+        
+        alignItems: "center",
+        backgroundColor: colors.darkGray,
+        width: "100%",
+        height: "100%", 
+    },
+
 });
 
 const nav = StyleSheet.create({
+
     content:{
         backgroundColor: colors.primary,
+        flexDirection: "row",
+        justifyContent:"space-between",
+        alignItems: "center"
 
     },
-    text:{
-        marginLeft: 30,
+    leftText:{
+        marginLeft:15,
         fontWeight:"bold",
         color: colors.black,
         fontSize: 18,
-    },
+        marginRight:2
+        },
+        backImg:{
+            marginLeft:15,
+        }
 });
 
 

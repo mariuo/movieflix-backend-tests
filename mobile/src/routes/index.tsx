@@ -1,18 +1,21 @@
 import React from 'react';
 import {Home, Login, Movies, Details} from '../pages';
 import { createStackNavigator} from '@react-navigation/stack';
-import { NavBar } from '../components';
+import { NavBarRight, NavBarLeft } from '../components';
 import { colors } from '../styles';
 
 const Stack = createStackNavigator();
 
 const Routes: React.FC = () =>{
+   
     return (
         <Stack.Navigator screenOptions={{
             headerTitle: " ",
             headerStyle: {backgroundColor: colors.primary},
             headerTintColor: colors.black,
-            headerLeft: () => <NavBar />,
+            
+            headerLeft: () => <NavBarLeft />,
+            headerRight: () => <NavBarRight />,
             
         }}>
             <Stack.Screen name="Home" component={Home}/>
