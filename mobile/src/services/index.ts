@@ -14,10 +14,36 @@ export async function userToken(){
 }
 
 
+export async function getMoviesGenre(id: number) {
+    const authToken = await userToken();
+    
+    const res = api.get(`/movies?&direction=ASC&orderBy=title&genreId=${id}`, {
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+        },
+    });
+    
+    return res;
+
+}
+
 export async function getMovies() {
     const authToken = await userToken();
     
-    const res = api.get('/movies?&direction=ASC&orderBy=title', {
+    const res = api.get(`/movies?&direction=ASC&orderBy=title`, {
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+        },
+    });
+    
+    return res;
+
+}
+
+export async function getGenres() {
+    const authToken = await userToken();
+    
+    const res = api.get('/genres', {
         headers: {
             Authorization: `Bearer ${authToken}`,
         },

@@ -1,4 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const deviceWidth = Dimensions.get("window").width;
+const deviceHeight = Dimensions.get("window").height;
 
 const colors = {
     primary:"#FFC700",
@@ -71,6 +74,24 @@ const text = StyleSheet.create({
         textTransform: "uppercase",
         justifyContent: "center",
                 
+    },
+    /// search
+    search:{
+        fontSize: 16,
+        fontWeight: "400",
+        color: colors.white,        
+        backgroundColor: colors.mediumGray,
+        borderColor: colors.white,
+        borderWidth: 1,
+        width: "100%" ,
+        borderRadius: 10, 
+        textAlign: "center",
+        paddingRight: 10,
+        paddingVertical: 10,
+        
+    },
+    modal:{
+        color:colors.white,
     },
     
 
@@ -182,6 +203,70 @@ const theme = StyleSheet.create({
         width:"100%",
         height:210,        
     },
+    //Search
+    modalContainer:{
+        width: deviceWidth,
+        height: deviceHeight,
+        backgroundColor: "#00000033",
+        alignItems: "center",
+        justifyContent:"center",
+    },
+    modalContent:{
+        width: 300,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "50%",
+        backgroundColor: colors.darkGray,
+        borderRadius: 20,
+        padding: 20,
+        shadowColor: colors.black,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity:0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+
+    },
+    modalItem:{
+        width: "100%",
+        backgroundColor: colors.mediumGray,
+        padding: 10,
+        marginVertical: 5,
+        borderRadius: 5, 
+    },
+    
+    selectInput:{
+            width:290,
+            height:50,
+            borderWidth:1,
+            borderColor: colors.mediumGray,
+            borderRadius: 10,
+            padding: 10,
+            marginVertical: 15,
+            justifyContent: "center",
+        },
+
+    searchContainer:{
+        backgroundColor:colors.mediumGray,        
+        width: "100%",               
+        borderRadius: 10,
+        paddingVertical: 20,
+        paddingHorizontal:15,
+        marginVertical: 10, 
+    },
+    searchContent:{
+        backgroundColor: colors.mediumGray,
+        flexDirection: "row",
+        alignItems:"center",        
+    },
+    searchArrow:{
+        marginLeft: -40,
+        transform: [{ rotate: '90deg' }],
+        
+    }
+
 
 });
 
