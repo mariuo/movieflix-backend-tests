@@ -3,7 +3,7 @@ import React, { useEffect, useState} from 'react';
 import { View, Text, } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { doLogout, isAuthenticated } from '../services/auth';
-import { nav } from '../styles';
+import { nav, text } from '../styles';
 
 const NavBarRight: React.FC = () => {
     const [Authenticated, setAuthenticated] = useState(false);
@@ -25,8 +25,8 @@ const NavBarRight: React.FC = () => {
     return (
         <>
             {Authenticated ? (
-                <TouchableOpacity onPress={()=> logout()}>
-                    <Text> Sair</Text>
+                <TouchableOpacity style={nav.btnLogout} onPress={()=> logout()}>
+                    <Text style={text.btnLogout}> Sair</Text>
                 </TouchableOpacity>
             ) : ( null
 

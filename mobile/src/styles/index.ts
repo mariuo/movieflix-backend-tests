@@ -40,6 +40,40 @@ const text = StyleSheet.create({
         marginTop: 100,
         marginBottom: 50,
     },
+    btnLogout:{
+        fontSize:14,
+        color: colors.black,
+        fontWeight: "bold",
+        textTransform: "uppercase",
+    },
+    /// Card
+    cardTitle:{
+        fontWeight:"bold",
+        fontSize: 18,
+        color: colors.white,
+        marginTop: 20,
+             
+    },
+    cardYear:{
+        fontSize: 14,
+        color: colors.primary,
+        fontWeight:"bold",
+          
+    },
+    cardSubTitle:{
+        fontSize: 16,
+        color: colors.lightGray,
+        
+    },
+    cardDetails:{
+        color: colors.white,
+        fontWeight: "bold",
+        textTransform: "uppercase",
+        justifyContent: "center",
+                
+    },
+    
+
 
 });
 
@@ -50,7 +84,8 @@ const theme = StyleSheet.create({
         alignItems: "center",
         backgroundColor: colors.darkGray,
         width: "100%",
-        height: "100%", 
+        height: "100%",
+        padding: 20, 
     },
     content:{
         width: 220,
@@ -101,14 +136,51 @@ const theme = StyleSheet.create({
     toggle:{
         marginLeft:-40,
     },
-    eyes:{},
+    eyes:{
+        width: 25,
+        height: 20,
+        opacity: 0.5,        
+    },
     loginContainer:{
-        flex: 1,
-        
+        flex: 1,        
         alignItems: "center",
         backgroundColor: colors.darkGray,
         width: "100%",
         height: "100%", 
+    },
+    // Movies
+    scrollContainer:{
+        padding: 20,
+        backgroundColor: colors.darkGray,
+    },
+    card:{
+        backgroundColor:colors.mediumGray,        
+        width: "100%",               
+        borderRadius: 10,
+        paddingVertical: 20,
+        alignItems: "center",   
+        marginVertical: 10,   
+    },
+    movieCardInfo:{
+        width: "100%",
+        padding: 15,
+        
+    },
+    cardBtnDetails:{
+        marginTop: 10,
+        borderWidth: 1,
+        borderColor: colors.white,
+        borderRadius: 10,
+        paddingVertical: 3,
+        marginRight: 18,
+        width: 300,
+        height: 50,
+        alignItems: "center",
+        justifyContent: "center",      
+    },
+    cardImg:{
+        width:"100%",
+        height:210,        
     },
 
 });
@@ -123,15 +195,28 @@ const nav = StyleSheet.create({
 
     },
     leftText:{
-        marginLeft:15,
+        marginLeft: 25,
         fontWeight:"bold",
         color: colors.black,
         fontSize: 18,
-        marginRight:2
+        
         },
         backImg:{
-            marginLeft:15,
-        }
+            marginLeft: 25,
+            
+        },
+        btnLogout:{
+            borderWidth: 1.5,
+            borderColor: colors.black,
+            borderRadius: 10,
+            paddingVertical: 3,
+            marginRight: 18,
+            width: 75,
+            height: 26,
+            alignItems: "center",
+            justifyContent: "center",
+
+        },
 });
 
 

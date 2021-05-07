@@ -21,7 +21,7 @@ export async function login(userInfo: AuthProps) {
     return result;
 }
 
-async function setAsyncKeys(key: string, value: string) {
+export async function setAsyncKeys(key: string, value: string) {
     try {
         await AsyncStorage.setItem(key, value)
     } catch (e) {

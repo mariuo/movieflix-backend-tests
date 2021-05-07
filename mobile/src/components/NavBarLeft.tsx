@@ -1,6 +1,6 @@
 import { useNavigation, useRoute } from '@react-navigation/core';
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { nav } from '../styles';
 import backImage from '../assets/back.png';
@@ -24,6 +24,7 @@ const NavBarLeft: React.FC = () => {
                 </TouchableOpacity>
 
             ) : null}
+
             <Text style={nav.leftText}>MovieFlix</Text>
 
         </View>
