@@ -93,7 +93,38 @@ const text = StyleSheet.create({
     modal:{
         color:colors.white,
     },
-    
+    //// Detail MOVIE
+    movieTitle:{
+        color: colors.white,
+        fontSize:24,
+        fontWeight: "bold",
+        paddingHorizontal:15,
+        marginVertical: 15,
+    },
+    movieSubtitle:{      
+      color:colors.softGray,
+      fontSize: 18,
+      paddingHorizontal:15, 
+    },
+    movieYear:{
+        marginTop: 15,
+        color: colors.primary,
+        fontSize:24,
+        fontWeight: "bold",
+        paddingHorizontal:15, 
+    },
+    movieSin:{
+        marginTop: 15,
+        color:colors.white,
+        fontSize:22,
+        fontWeight: "bold",
+        paddingHorizontal:15, 
+    },
+    movieSinopse:{
+        color: colors.softGray,
+        fontSize: 16,
+
+    },
 
 
 });
@@ -180,12 +211,25 @@ const theme = StyleSheet.create({
         borderRadius: 10,
         paddingVertical: 20,
         alignItems: "center",   
-        marginVertical: 10,   
+        marginVertical: 10,
+        shadowColor: colors.black,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,   
     },
     movieCardInfo:{
         width: "100%",
         padding: 15,
-        
+        shadowColor: colors.black,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
     },
     cardBtnDetails:{
         marginTop: 10,
@@ -201,7 +245,8 @@ const theme = StyleSheet.create({
     },
     cardImg:{
         width:"100%",
-        height:210,        
+        height:210,
+                
     },
     //Search
     modalContainer:{
@@ -255,6 +300,13 @@ const theme = StyleSheet.create({
         paddingVertical: 20,
         paddingHorizontal:15,
         marginVertical: 10, 
+        shadowColor: colors.black,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
     },
     searchContent:{
         backgroundColor: colors.mediumGray,
@@ -265,7 +317,35 @@ const theme = StyleSheet.create({
         marginLeft: -40,
         transform: [{ rotate: '90deg' }],
         
-    }
+    },
+    /// Details Movie
+    cardDetails:{
+        backgroundColor:colors.mediumGray,        
+        width: "100%",               
+        borderRadius: 10,
+                          
+        marginVertical: 10,
+        shadowColor: colors.black,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        
+        
+    },
+    scrollTextContainer:{
+        marginVertical:7,
+        marginHorizontal:15,
+        padding: 20,
+        borderWidth: 0.5,
+        borderRadius: 10,
+        borderColor: colors.white,
+
+    },
+
+
 
 
 });

@@ -40,6 +40,19 @@ export async function getMovies() {
 
 }
 
+export async function getMovie(id: number) {
+    const authToken = await userToken();
+    
+    const res = api.get(`/movies/${id}`, {
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+        },
+    });
+    
+    return res;
+
+}
+
 export async function getGenres() {
     const authToken = await userToken();
     
