@@ -125,6 +125,12 @@ const text = StyleSheet.create({
         fontSize: 16,
 
     },
+    reviewTitle:{
+        fontSize:22,
+        fontWeight: "bold",
+        color: colors.white,
+    },
+
 
 
 });
@@ -344,8 +350,55 @@ const theme = StyleSheet.create({
         borderColor: colors.white,
 
     },
+    // Reviews
+    starImg:{
+        height: 12,
+        width: 12,
+        marginRight: 15,
+        marginLeft: 18,
+    },
+    reviewContainer:{
+        backgroundColor:colors.mediumGray,        
+        width: "100%",               
+        borderRadius: 10,
+        paddingTop: 11,
+        paddingRight:  15,
+        paddingBottom: 18,
+        paddingLeft: 22,                  
+        marginVertical: 10,
+        shadowColor: colors.black,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+    },
+    reviewContet:{
+        marginTop: 15,
+        flexDirection: "row",
+        alignContent: "center",
+        alignItems: "center",
+    },
+    reviewTextContent:{
+        marginVertical:5,
+        padding: 13,
+        borderWidth: 0.5,
+        borderRadius: 10,
+        borderColor: colors.white,
 
+    },
+    textReviewName:{
+        fontSize:16,
+        color: colors.white,
+        fontWeight:"bold",
+    },
+    textMovieSinopse:{
+        color: colors.softGray,
+        fontSize: 16,
 
+    },
+                          
 
 
 });
