@@ -29,8 +29,7 @@ const Movies: React.FC = () => {
     async function fillGenres() {
         setLoading(true);
         const genreList = await getGenres();
-        setGenres(genreList.data)
-        
+        setGenres(genreList.data);        
         setLoading(false);       
     }
 
@@ -52,7 +51,16 @@ const Movies: React.FC = () => {
              <View>
                 <Modal style={theme.modalContainer} visible={showGenres} animationType="fade" transparent={true} presentationStyle={'overFullScreen'}>
                     <View style={theme.modalContent}>
-                        <ScrollView>                                
+                        <ScrollView>
+                        <TouchableOpacity style={theme.modalItem} onPress={() => {
+                                            setGenre({});
+                                            fillGenres();
+                                            fillMovies();
+                                            setShowGenres(!showGenres);
+                                        }}>
+                                            <Text style={text.modalCancel}> Limpar Filtro</Text>
+                                            
+                                        </TouchableOpacity>                                
                             {   
                                 genres.map(
                                     gen => (

@@ -93,6 +93,9 @@ const text = StyleSheet.create({
     modal:{
         color:colors.white,
     },
+    modalCancel:{
+        color:colors.primary,
+    },
     //// Detail MOVIE
     movieTitle:{
         color: colors.white,

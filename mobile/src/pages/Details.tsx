@@ -37,8 +37,7 @@ const Details = ({ route: { params: { id } } }) => {
     }
 
     useEffect(() => {
-        loadMovieData();
-        
+        loadMovieData();        
     }, []);
 
     return (
@@ -69,7 +68,6 @@ const Details = ({ route: { params: { id } } }) => {
                     </Text>
                     { reviews?.map(rev => (
                         <CardReview key={rev.id} {...rev}/>
-
                     ))}
                 </View>
             ) : (null)}

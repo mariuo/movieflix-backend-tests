@@ -26,15 +26,18 @@ const FormReview: React.FC<ReviewFormProps> = ({id }) => {
 
     const [review, setReview] = useState({});
 
-    async function handleSave () {
-       
+    async function handleSave () {       
         try{
-            await createReview(review);
-            Alert.alert("Review salva com sucesso!");            
+            const res = await createReview(review);
+            navigation.navigate("Details");
+            Alert.alert("Avaliação foi salva com sucesso!");            
+            //console.warn(res.status.toString);
+           
 
         }catch(res){
             Alert.alert("Erro ao salvar");
         }
+        
     }
 
     return (
