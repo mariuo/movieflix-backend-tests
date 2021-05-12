@@ -4,23 +4,14 @@ import { theme } from '../styles';
 import starImg from '../assets/star.png';
 
 interface ReviewProps {
-    id: number,
     text: string,
-    movieId: number,
     user: User,
 }
 interface User {
-    id: number,
     name: string,
-    email: string,
-    roles: Role[],
-}
-interface Role {
-    id: Number,
-    authority: string[],
 }
 //
-const CardReview: React.FC<ReviewProps> = ({id, text, movieId, user}) => {
+const CardReview: React.FC<ReviewProps> = ({text, user}) => {
     
 
     return (

@@ -398,6 +398,40 @@ const theme = StyleSheet.create({
         fontSize: 16,
 
     },
+    reviewFormContent:{
+        alignItems:"center",
+    },
+    textArea:{
+        width:"100%",
+        maxWidth:"100%",
+        height:100,
+        borderWidth: 1,
+        borderColor: colors.white,
+        borderRadius:10,
+        padding: 10,
+        backgroundColor: colors.white,
+        marginVertical:15,
+        
+    },
+    formBtn:{
+        backgroundColor: colors.primary,
+        flexDirection: "row",
+        width: 330,
+        height: 50,
+        borderRadius: 10,
+        alignItems: "center",
+        justifyContent:"center",
+        textAlign: "center",              
+    },
+
+    textPrimaryBtn:{       
+            fontSize: 16,
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            textAlign: "center",
+                   
+    },
+
                           
 
 

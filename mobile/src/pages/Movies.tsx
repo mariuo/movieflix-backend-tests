@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Image, Text, View, ScrollView, ActivityIndicator, Modal, TouchableOpacity} from 'react-native';
 import { CardMovie } from '../components';
 import { text, theme } from '../styles';
-import movieImage from '../assets/movie1.png';
 import { getGenres, getMovies, getMoviesGenre } from '../services';
 import arrow from '../assets/arrow.png'
+import { isAllowedByRole } from '../services/auth';
 
 type Genre = {
     id?: number;
@@ -25,11 +25,13 @@ const Movies: React.FC = () => {
         setMovies(movieList.data.content);
         setLoading(false);       
     }
-
+    
     async function fillGenres() {
         setLoading(true);
         const genreList = await getGenres();
         setGenres(genreList.data)
+        
+        setLoading(false);       
     }
 
     async function filter(genre : Genre){
@@ -42,6 +44,7 @@ const Movies: React.FC = () => {
     useEffect(()=>{
         fillGenres();
         fillMovies();
+        
     },[]);
 
     return(

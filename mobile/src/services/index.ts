@@ -13,6 +13,15 @@ export async function userToken(){
     return token;
 }
 
+export async function createReview(data: object){
+    const authToken = await userToken();
+    const res = api.post(`/reviews`, data, {
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+        },
+    });
+    return res;
+}
 
 export async function getMoviesGenre(id: number) {
     const authToken = await userToken();

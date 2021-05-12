@@ -1,38 +1,13 @@
 import { useNavigation } from '@react-navigation/core';
 import React, { useEffect, useState } from 'react';
-import { Image, View, Text } from 'react-native';
+import { Image, View, Text,  } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { CardReview } from '../components';
+import { CardReview, FormReview } from '../components';
 import { getMovie } from '../services';
+import { isAllowedByRole } from '../services/auth';
 import { text, theme } from '../styles';
 
-interface Movie {
-    id: number,
-    title: string,
-    subTitle: string,
-    year: number,
-    imgUrl: string,
-    synopsis: string,
-    genreId: number,
-    reviews: Review[],
-}
-interface Review {
-    id: number,
-    text: string,
-    movieId: number,
-    user: User,
-}
-interface User {
-    id: number,
-    name: string,
-    email: string,
-    roles: Role[],
-}
 
-interface Role {
-    id: Number,
-    authority: string[],
-}
 const Details = ({ route: { params: { id } } }) => {
 
     const navigation = useNavigation();
@@ -50,22 +25,26 @@ const Details = ({ route: { params: { id } } }) => {
 
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [showForm, setShowForm] = useState(true);
 
     async function loadMovieData() {
         setLoading(true);
         const res = await getMovie(id);
         setMovie(res.data);
         setReviews(res.data.reviews);
+        setShowForm(await isAllowedByRole(['ROLE_MEMBER']));      
         setLoading(false);
     }
 
     useEffect(() => {
         loadMovieData();
+        
     }, []);
 
     return (
+        
         <ScrollView contentContainerStyle={theme.scrollContainer}>
-            <View style={theme.cardDetails}>
+           <View style={theme.cardDetails}>
                 <Text style={text.movieTitle}> {movie.title}</Text>
                 <Image source={{ uri: movie.imgUrl }} style={theme.cardImg} />
                 <View>
@@ -78,6 +57,10 @@ const Details = ({ route: { params: { id } } }) => {
                 </ScrollView>
 
             </View>
+            {showForm && (
+                <FormReview {...movie}/>
+                        
+            )}
 
             {reviews.length !== 0 ? (
                 <View style={theme.reviewContainer}>

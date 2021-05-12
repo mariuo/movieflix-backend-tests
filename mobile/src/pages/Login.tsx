@@ -4,9 +4,9 @@ import eyesClosed from '../assets/eyes-closed.png';
 import eyesOpened from '../assets/eyes-opened.png';
 import arrow from '../assets/arrow.png';
 import {text, theme} from '../styles';
-import { isAuthenticated, login } from '../services/auth';
+import { getAccessTokenDecoded, isAuthenticated, login } from '../services/auth';
 import { useNavigation } from '@react-navigation/core';
-import Toast from 'react-native-tiny-toast'
+
 
 const Login: React.FC = () => {
     const [hidePassword, setHidePassword] = useState(true);
@@ -22,13 +22,13 @@ const Login: React.FC = () => {
         navigation.navigate("Movies")
         }catch(e) {
             Alert.alert('User/Senha inválidos.');
-            //Toast.show("User/Senha inválidos.");
+            
         }
         
     }
     useEffect(()=>{
         isAuthenticated();
-
+        const token = getAccessTokenDecoded();
     }, []);
 
     return(
